@@ -1,0 +1,4 @@
+0. Terminate
+1. Prime Checker
+2. Prime Lister
+3. Quadratic Solver
