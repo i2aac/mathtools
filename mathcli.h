@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include "mathtools.h"
 
+void template(){
+
+    unsigned long long n;
+
+    printf("\n---Tool Name---\n");
+    printf("Description of tool.\n");
+
+    while(true){
+        printf("\nEnter a valid number or 0 to terminate: ");
+
+        scanf("%lli", &n);
+        if(!n){
+            break;
+        }
+    }
+
+    printf("\n---Terminated---\n");
+
+    return;
+}
+
 void call_prime_checker(){
     unsigned long long n;
 
@@ -84,6 +105,31 @@ void call_solve_quadratic(){
             printf("\nx1 = %.6g\nx2 = %.6g\n", t1 + t2, t1 - t2);
         }
         
+    }
+
+    printf("\n---Terminated---\n");
+
+    return;
+}
+
+void call_factoriser(){
+
+    unsigned long long n, num_factors;
+
+    printf("\n---Factoriser---\n");
+    printf("Lists all positive factors of a natural number (ℕ).\n");
+
+    while(true){
+        printf("\nEnter a natural number (ℕ) or 0 to terminate: ");
+
+        scanf("%lli", &n);
+        if(!n){
+            break;
+        }
+
+        factorise(n, &num_factors);
+
+        printf("\n%lli has %lli factors.\n", n, num_factors);
     }
 
     printf("\n---Terminated---\n");

@@ -15,7 +15,7 @@ void print_list(){
     }
 
     c = fgetc(fptr);
-    while(c != EOF){
+    while(c != '/'){
         printf("%c", c);
         c = fgetc(fptr);
     }
@@ -35,6 +35,9 @@ void use_tool(int n){
             break;
         case 3:
             call_solve_quadratic();
+            break;
+        case 4:
+            call_factoriser();
             break;
         default:
             printf("\n%d does not have an associated function.\n", n);

@@ -89,3 +89,24 @@ void solve_quadratic(double a, double b, double c, double *t1, double *t2, bool 
 
     return;
 }
+
+void factorise(unsigned long long n, unsigned long long *num_factors){
+    unsigned long long tally = 0, i = 1;
+    while(i * i < n){
+        if(n % i == 0){
+            printf("%lli\t%lli\n", i, n / i);
+            tally ++;
+        }
+        i++;
+    }
+    tally *= 2;
+
+    if(i * i == n){
+        printf("%lli\t(square root)\n", i);
+        tally++;
+    }
+
+    *num_factors = tally;
+
+    return;
+}
