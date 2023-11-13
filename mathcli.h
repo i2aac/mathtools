@@ -136,3 +136,31 @@ void call_factoriser(){
 
     return;
 }
+
+void call_prime_factoriser(){
+
+    unsigned long long n;
+
+    printf("\n---Prime Factoriser---\n");
+    printf("Lists prime factors of a natural number (ℕ).\n");
+
+    while(true){
+        printf("\nEnter a natural number (ℕ) or 0 to terminate: ");
+
+        scanf("%lli", &n);
+        if(!n){
+            break;
+        }
+
+        if(n == 1){
+            printf("\n1 has no prime factors.\n");
+        }
+        else{
+            prime_factorise(n);
+        }
+    }
+
+    printf("\n---Terminated---\n");
+
+    return;
+}

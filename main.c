@@ -39,6 +39,9 @@ void use_tool(int n){
         case 4:
             call_factoriser();
             break;
+        case 5:
+            call_prime_factoriser();
+            break;
         default:
             printf("\n%d does not have an associated function.\n", n);
             break;

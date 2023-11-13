@@ -110,3 +110,37 @@ void factorise(unsigned long long n, unsigned long long *num_factors){
 
     return;
 }
+
+void prime_factorise_r(unsigned long long n, unsigned long long *list){
+    unsigned long long i;
+    for(i = 2; i * i <= n; i++){
+        if(n % i == 0){
+            prime_factorise_r(i, list);
+            prime_factorise_r(n / i, list);
+            return;
+        }
+    }
+
+    list[n]++;
+
+    return;
+}
+
+void prime_factorise(unsigned long long n){
+    unsigned long long *num_of_each = (unsigned long long *) calloc(n + 1, sizeof(unsigned long long)), tally = 0;
+
+    prime_factorise_r(n, num_of_each);
+
+    for(unsigned long long i = 2; i <= n; i++){
+        if(!!num_of_each[i]){
+            printf("%lli^%lli\n", i, num_of_each[i]);
+            tally += num_of_each[i];
+        }
+    }
+
+    printf("\n%lli has %lli prime factors.\n", n, tally);
+
+    free(num_of_each);
+
+    return;
+}
