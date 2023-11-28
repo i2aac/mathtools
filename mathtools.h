@@ -48,17 +48,11 @@ void list_primes(unsigned long long a, unsigned long long b, unsigned long long 
 
     for(unsigned long long i = 2; i <= b; i++){
         if(!numbers[i]){
-            for(unsigned long long j = i * 2; j <= b; j += i){
-                numbers[j] = true;
-
-            }
-        }
-    }
-
-    for(unsigned long long i = a; i <= b; i++){
-        if(!numbers[i]){
             tally++;
             printf("%lli\n", i);
+            for(unsigned long long j = i * 2; j <= b; j += i){
+                numbers[j] = true;
+            }
         }
     }
 
